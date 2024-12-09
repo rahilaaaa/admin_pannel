@@ -1,0 +1,34 @@
+{% extends "users/base.html" %}
+{% load static  %}
+{% block title %}Home - My Project{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+{% block content %}
+    <!-- Display messages -->
+    {% if messages %}
+    <div class="alert alert-warning" role="alert">
+        {% for message in messages %}
+            {{ message }}<br>
+        {% endfor %}
+    </div>
+    {% endif %}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div></div> <!-- Placeholder for spacing -->
+        <a href="{% url 'logout' %}" class="btn btn-danger ms-auto mt-n3">Logout</a>
+    </div>
+    
+
+
+    <!-- Hero Section -->
+    <div class="hero bg-primary text-white text-center py-5">
+        <h1> welcome, {{ user.username }}!</h1>
+        <p class="lead">We are glad to have you here. let's get start with your journey.</p>
+    </di>
+
+   
+</div>
+
+
+{% endblock %}
